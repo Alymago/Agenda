@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ContatosActivity">
+    tools:context=".activities.ContatosActivity">
 
 
     <EditText
@@ -15,28 +15,47 @@
         android:hint="Name" />
 
     <EditText
-        android:id="@+id/editNumberText"
+        android:id="@+id/editPhoneText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Phone" />
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/editEmailText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="E-mail" />
+
+    <EditText
+        android:id="@+id/editStreetText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Street" />
+
+    <EditText
+        android:id="@+id/editNumberText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number" />
+
+    <EditText
+        android:id="@+id/editCityText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City/State" />
 
     <RatingBar
         android:id="@+id/punctuationRatingBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:numStars="5" />
+        android:numStars="5"
+        android:max="10" />
 
     <Button
         android:id="@+id/saveContactButton"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="Salvar" />
+        android:text="Save" />
 
 </LinearLayout>
