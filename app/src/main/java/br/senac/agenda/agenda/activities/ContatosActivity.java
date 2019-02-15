@@ -9,6 +9,7 @@ import android.widget.RatingBar;
 import android.widget.Toast;
 
 import br.senac.agenda.agenda.R;
+import br.senac.agenda.agenda.dao.ContactDAO;
 import br.senac.agenda.agenda.model.AddressEntity;
 import br.senac.agenda.agenda.model.ContactsEntity;
 
@@ -39,12 +40,14 @@ public class ContatosActivity extends AppCompatActivity {
                         phoneEditText.getText().toString(),
                         emailEditText.getText().toString(),
                         Double.valueOf(punctuationRatingBar.getRating()));
+                ContactDAO contactDAO = new ContactDAO(ContatosActivity.this);
+                contactDAO.save(contact);
 
                 AddressEntity address = new AddressEntity(streetEditText.getText().toString(),
                         numberEditText.getText().toString(),
                         cityEditText.getText().toString());
 
-                Toast.makeText(ContatosActivity.this, "Contact Save! Name: " + contact + "Address: " + address, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContatosActivity.this, "Contact Save! Name: ", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
