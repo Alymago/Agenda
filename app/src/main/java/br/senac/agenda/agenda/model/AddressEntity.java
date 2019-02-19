@@ -1,15 +1,24 @@
 package br.senac.agenda.agenda.model;
 
 public class AddressEntity {
-    private Integer id;
+    private String email;
     private String street;
     private String number;
-    private String city;
+    private String cityState;
 
-    public AddressEntity(String street, String number, String city) {
+    public AddressEntity(String street, String number, String city_state, String email) {
+        this.email = email;
         this.street = street;
         this.number = number;
-        this.city = city;
+        this.cityState = city_state;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getStreet() {
@@ -28,18 +37,11 @@ public class AddressEntity {
         this.number = number;
     }
 
-    public String getCity() {
-        return city;
+    public String getCityState() {
+        return cityState;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    @Override
-    public String toString() {
-        return  "street='" + street + '\'' +
-                ", number='" + number + '\'' +
-                ", city='" + city;
+    public void setCityState(String cityState) {
+        this.cityState = cityState;
     }
 }

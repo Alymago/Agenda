@@ -10,12 +10,18 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final Integer DB_VERSION = 1;
 
-    private final String DB_CREATE = "CREATE TABLE CONTACT (" +
+    private final String DB_CREATE_CONTACT = "CREATE TABLE CONTACT (" +
             "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "NAME TEXT, " +
             "PHONE TEXT, " +
             "EMAIL TEXT, " +
-            "PUNCTUACTION REAL)";
+            "PUNCTUATION REAL)";
+
+    private final String DB_CREATE_ADDRESS = "CREATE TABLE ADDRESS (" +
+            "EMAIL TEXT, " +
+            "STREET TEXT, " +
+            "NUMBER TEXT , " +
+            "CITY_STATE TEXT)";
 
     public SQLiteHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -23,8 +29,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(DB_CREATE);
+        db.execSQL(DB_CREATE_CONTACT);
+        db.execSQL(DB_CREATE_ADDRESS);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

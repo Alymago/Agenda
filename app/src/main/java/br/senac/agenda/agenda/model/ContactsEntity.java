@@ -4,12 +4,12 @@ public class ContactsEntity {
     private Integer id;
     private String name;
     private String phone;
-    private Double pontuaction;
+    private Double punctuation;
 
-    public ContactsEntity(String name, String phone, String email, Double pontuaction) {
+    public ContactsEntity(String name, String phone, String email, Double punctuation) {
         this.name = name;
         this.phone = phone;
-        this.pontuaction = pontuaction;
+        this.punctuation = punctuation;
     }
 
     public Integer getId() {
@@ -18,6 +18,9 @@ public class ContactsEntity {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public ContactsEntity() {
     }
 
     public String getName() {
@@ -36,18 +39,18 @@ public class ContactsEntity {
         this.phone = phone;
     }
 
-    public Double getPontuaction() {
-        return pontuaction;
+    public Double getPunctuation() {
+        return punctuation;
     }
 
-    public void setPontuaction(Double pontuaction) {
-        this.pontuaction = pontuaction;
+    public void setPunctuation(Double punctuation) {
+        this.punctuation = punctuation;
     }
 
     @Override
     public String toString() {
         return  "name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
-                ", pontuaction=" + pontuaction;
+                ", punctuation=" + punctuation;
     }
 }

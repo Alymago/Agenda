@@ -8,7 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.List;
+
 import br.senac.agenda.agenda.R;
+import br.senac.agenda.agenda.dao.ContactDAO;
+import br.senac.agenda.agenda.model.ContactsEntity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         ListView list = findViewById(R.id.listContactsListView);
 
-        String[] contacts = {"André", "Ari", "Roberto", "Luzia"};
+        ContactDAO contactDAO= new ContactDAO(this);
+        List<ContactsEntity> contacts = contactDAO.list();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, contacts);
+        ArrayAdapter<ContactsEntity> adapter = new ArrayAdapter<ContactsEntity>(this, android.R.layout.simple_list_item_1, contacts);
 
         list.setAdapter(adapter);
 
