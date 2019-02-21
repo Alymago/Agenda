@@ -28,7 +28,6 @@ public class ContatosActivity extends AppCompatActivity {
 
                 EditText nameEditText = findViewById(R.id.editNameText);
                 EditText phoneEditText = findViewById(R.id.editPhoneText);
-                EditText emailEditText = findViewById(R.id.editEmailText);
                 EditText streetEditText = findViewById(R.id.editStreetText);
                 EditText numberEditText = findViewById(R.id.editNumberText);
                 EditText cityEditText = findViewById(R.id.editCityText);
@@ -38,7 +37,6 @@ public class ContatosActivity extends AppCompatActivity {
 
                 ContactsEntity contact = new ContactsEntity(nameEditText.getText().toString(),
                         phoneEditText.getText().toString(),
-                        emailEditText.getText().toString(),
                         Double.valueOf(punctuationRatingBar.getRating()));
                 ContactDAO contactDAO = new ContactDAO(ContatosActivity.this);
                 contactDAO.save(contact);

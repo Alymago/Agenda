@@ -18,6 +18,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             "PUNCTUATION REAL)";
 
     private final String DB_CREATE_ADDRESS = "CREATE TABLE ADDRESS (" +
+            "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "EMAIL TEXT, " +
             "STREET TEXT, " +
             "NUMBER TEXT , " +
@@ -30,12 +31,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(DB_CREATE_CONTACT);
-        db.execSQL(DB_CREATE_ADDRESS);
     }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (oldVersion < 2){
+            db.execSQL(DB_CREATE_ADDRESS);
+        }
 
     }
 

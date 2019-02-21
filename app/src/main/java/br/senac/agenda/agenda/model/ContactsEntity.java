@@ -6,7 +6,7 @@ public class ContactsEntity {
     private String phone;
     private Double punctuation;
 
-    public ContactsEntity(String name, String phone, String email, Double punctuation) {
+    public ContactsEntity(String name, String phone, Double punctuation) {
         this.name = name;
         this.phone = phone;
         this.punctuation = punctuation;

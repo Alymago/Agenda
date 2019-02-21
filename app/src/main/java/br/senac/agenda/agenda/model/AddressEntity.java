@@ -1,25 +1,25 @@
 package br.senac.agenda.agenda.model;
 
 public class AddressEntity {
-    private String email;
+    private Integer id;
     private String street;
     private String number;
     private String cityState;
 
-    public AddressEntity(String street, String number, String city_state, String email) {
-        this.email = email;
+    public AddressEntity(String street, String number, String city_state) {
         this.street = street;
         this.number = number;
         this.cityState = city_state;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getId() {
+        return id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setId(Integer id) {
+        this.id = id;
     }
+        
 
     public String getStreet() {
         return street;

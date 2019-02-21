@@ -21,12 +21,6 @@
         android:hint="Phone" />
 
     <EditText
-        android:id="@+id/editEmailText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="E-mail" />
-
-    <EditText
         android:id="@+id/editStreetText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
